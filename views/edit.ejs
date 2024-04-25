@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Dark background */
+            color: #fff; /* White text */
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #2d2d2d; /* Darker background for the form */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6347; /* Red title */
+        }
+
+        label {
+            font-weight: bold;
+            color: #ff6347; /* Red labels */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #333; /* Dark border */
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #2d2d2d; /* Darker background for inputs */
+            color: #fff; /* White text */
+        }
+
+        input[type="submit"] {
+            background-color: #b30000; /* Dark red */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #800000; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <form action="/update/<%=Employee.id%>" method="POST" class="container">
+
+        <h2>Edit Employee</h2>
+
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName" value="<%=Employee.firstName%>"><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName" value="<%=Employee.lastName%>"><br>
+
+        <label for="employeeId">Employee ID:</label><br>
+        <input type="text" id="employeeId" name="employeeId" value="<%=Employee.employeeId%>"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="<%=Employee.email %>"><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" value="<%=Employee.dob%>"><br>
+
+        <label for="code">Code:</label><br>
+        <input type="text" id="code" name="code" value="<%=Employee.code%>"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
